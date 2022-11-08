@@ -13,6 +13,17 @@
 //  Next.js가 이 페이지의 main component로 렌더링할 component를 구별할 수 있도록 한다.
 // 3. 개발하는 동안 Next.js 개발 서버를 실행하려면 package.json 파일에 스크립트를 추가 ("next dev")
 
+// Running the development server
+// 잘 작동하는지 확인하려면 터미널에서 npm run dev를 실행하고 브라우저에서 localhost:3000으로 이동하여 앱을 확인 한다.
+// 파일을 변경하고 저장하면 변경 사항이 브라우저에 자동으로 반영 업데이트된다.
+// => 이 기능을 'Fast Refresh'라고 한다. 수정 사항에 대한 즉각적인 피드백을 제공하며 Next.js로 pre-configured(미리 구성)되어 제공된다.
+
+// React는 modern interactive UI를 빌드하기 위한 필수적인 요소들을 제공하는 라이브러리이다.
+// 그러나 생성한 UI를 어플리케이션에 결합하는 작업은 여전히 필요하다.
+// 앞선 작업을 보면 이미 Next.js 사용의 이점을 느낄 수 있다.
+// 1. 복잡한 도구인 babel 스크립트를 제거함으로써 더 이상 babel에대해 생각할 필요가 없어졌다.
+// 2. 'Fast Refresh'가 잘 작동하는 것을 보았다.
+
 import { useState } from 'react';
 
 function Header({ title }) {
