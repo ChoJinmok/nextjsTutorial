@@ -7,12 +7,19 @@
 // 6. React.useState(0)의 'React.': 상단에 import { useState }추가해줘야함
 // => HTML 파일에 남아 있는 코드가 JSX이므로 파일 형식을 .html에서 .js 또는 .jsx로 변경할 수 있다.
 
+// Next.js 앱으로 완전히 전환하기 위해 해야 할 세 가지 추가 작업
+// 1. index.js 파일을 'pages'라는 새 폴더로 이동(나중에 자세히 설명).
+// 2. main React component에 export default를 추가하여
+//  Next.js가 이 페이지의 main component로 렌더링할 component를 구별할 수 있도록 한다.
+// 3. 개발하는 동안 Next.js 개발 서버를 실행하려면 package.json 파일에 스크립트를 추가 ("next dev")
+
 import { useState } from 'react';
+
 function Header({ title }) {
-  return <h1>{title ? title : 'Default title'}</h1>;
+  return <h1>{title || 'Default title'}</h1>;
 }
 
-function HomePage() {
+export default function HomePage() {
   const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
 
   const [likes, setLikes] = useState(0);
@@ -30,7 +37,11 @@ function HomePage() {
         ))}
       </ul>
 
-      <button onClick={handleClick}>Like ({likes})</button>
+      <button type="button" onClick={handleClick}>
+        Like (
+        {likes}
+        )
+      </button>
     </div>
   );
 }
